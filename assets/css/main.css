@@ -378,12 +378,12 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: white;
+  background-color: #234060;
   font-size: 14px;
   padding: 40px 0;
   position: relative;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid color-mix(in srgb, white, transparent 90%);
 }
 
 .footer .copyright p {
@@ -1338,4 +1338,9 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+.social-links a:hover {
+  color: rgb(44, 44, 44) !important;
+  transform: translateY(-3px);
 }
