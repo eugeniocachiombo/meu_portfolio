@@ -84,9 +84,11 @@
             <i class="bi bi-chat-dots navicon"></i><span>Contactos</span>
           </a>
         </li>
-      </ul>
 
+      </ul>
     </nav>
+
+    <span id="google_translate_element"></span>
 
   </header>
 
@@ -919,37 +921,37 @@
   </main>
 
   <footer id="footer" class="footer py-4 position-relative light-background"
-  style="border-top: 2px solid #f8f9fa; color: white;" >
+    style="border-top: 2px solid #f8f9fa; color: white;">
 
-      <div class="container text-center text-white">
-        <h5 class="mb-3 fw-semibold" style="color: white;">Eugénio Cachiombo</h5>
+    <div class="container text-center text-white">
+      <h5 class="mb-3 fw-semibold" style="color: white;">Eugénio Cachiombo</h5>
 
-        <!-- Ícones sociais -->
-        <div class="social-links mb-3">
-          <a href="https://github.com/eugeniocachiombo/" target="_blank" class="mx-2 text-white"
-            style="font-size: 1.2rem; transition: 0.3s;">
-            <i class="bi bi-github"></i>
-          </a>
-          <a href="https://ao.linkedin.com/in/eug%C3%A9nio-cachiombo-a8008b271" target="_blank" class="mx-2 text-white"
-            style="font-size: 1.2rem; transition: 0.3s;">
-            <i class="bi bi-linkedin"></i>
-          </a>
-          <a href="https://wa.me/244921439849" target="_blank" class="mx-2 text-white"
-            style="font-size: 1.2rem; transition: 0.3s;">
-            <i class="bi bi-whatsapp"></i>
-          </a>
-          <a href="mailto:eugeniocachiombo@gmail.com" class="mx-2 text-white"
-            style="font-size: 1.2rem; transition: 0.3s;">
-            <i class="bi bi-envelope"></i>
-          </a>
-        </div>
-
-        <!-- Direitos autorais -->
-        <p class="mb-0 small text-white">
-          © <strong>2025</strong> <span class="sitename" style="color: white;">Meu Portfólio</span> — Todos os
-          direitos reservados.
-        </p>
+      <!-- Ícones sociais -->
+      <div class="social-links mb-3">
+        <a href="https://github.com/eugeniocachiombo/" target="_blank" class="mx-2 text-white"
+          style="font-size: 1.2rem; transition: 0.3s;">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://ao.linkedin.com/in/eug%C3%A9nio-cachiombo-a8008b271" target="_blank" class="mx-2 text-white"
+          style="font-size: 1.2rem; transition: 0.3s;">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://wa.me/244921439849" target="_blank" class="mx-2 text-white"
+          style="font-size: 1.2rem; transition: 0.3s;">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="mailto:eugeniocachiombo@gmail.com" class="mx-2 text-white"
+          style="font-size: 1.2rem; transition: 0.3s;">
+          <i class="bi bi-envelope"></i>
+        </a>
       </div>
+
+      <!-- Direitos autorais -->
+      <p class="mb-0 small text-white">
+        © <strong>2025</strong> <span class="sitename" style="color: white;">Meu Portfólio</span> — Todos os
+        direitos reservados.
+      </p>
+    </div>
 
   </footer>
 
@@ -974,6 +976,20 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/jquery/jquery.js"></script>
+  <script type="text/javascript" src="assets/js/translate.js"></script>
+
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        includedLanguages: 'pt,en,fr,es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+
 </body>
 
 </html>
