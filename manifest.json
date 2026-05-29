@@ -1,0 +1,27 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "eugeniocachiombo.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "eugeniocachiombo.github",
+  "start_url": "/https://eugeniocachiombo.github.io/meu_portfolio/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://eugeniocachiombo.github.io/meu_portfolio/assets/img/perfil/1.jpg",
+      "type": "image/jpeg",
+      "sizes": "413x531",
+      "isSquare": false,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": true,
+      "width": 413,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "1"
+}
