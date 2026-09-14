@@ -2,7 +2,7 @@
   'use strict';
 
   /* =========================================================
-     DADOS DOS PROJECTOS
+     DADOS DOS PROJECTOS (com suporte a URL hospedado)
      ========================================================= */
   const PROJECTS = [
     {
@@ -18,7 +18,8 @@
         'assets/img/portfolio/planoconsumo/3.png',
         'assets/img/portfolio/planoconsumo/4.png',
         'assets/img/portfolio/planoconsumo/5.png',
-      ]
+      ],
+      url: 'https://plano-consumo.vercel.app/landingpage' // Exemplo de URL hospedado
     },
     {
       id: 'escogest',
@@ -41,7 +42,8 @@
         'assets/img/portfolio/escogest/12.PNG',
         'assets/img/portfolio/escogest/13.PNG',
         'assets/img/portfolio/escogest/28.PNG'
-      ]
+      ],
+      url: '' // Adiciona o link aqui quando estiver hospedado
     },
     {
       id: 'pryanick',
@@ -63,7 +65,8 @@
         'assets/img/portfolio/pryanick/img9.png',
         'assets/img/portfolio/pryanick/img10.png',
         'assets/img/portfolio/pryanick/img11.png'
-      ]
+      ],
+      url: ''
     },
     {
       id: 'johnsabores',
@@ -79,7 +82,8 @@
         'assets/img/portfolio/johnsabores/cat2.png',
         'assets/img/portfolio/johnsabores/receita.png',
         'assets/img/portfolio/johnsabores/receita2.png'
-      ]
+      ],
+      url: ''
     },
     {
       id: 'sistemastudio',
@@ -98,7 +102,8 @@
         'assets/img/portfolio/sistemastudio/sistemastudio (7).png',
         'assets/img/portfolio/sistemastudio/sistemastudio (8).png'
       ],
-      video: 'assets/img/portfolio/sistemastudio/sistemastudio.mp4'
+      video: 'assets/img/portfolio/sistemastudio/sistemastudio.mp4',
+      url: ''
     },
     {
       id: 'mifelviagens',
@@ -118,7 +123,8 @@
         'assets/img/portfolio/mifelviagens/mifelviagens (8).png',
         'assets/img/portfolio/mifelviagens/mifelviagens (9).png'
       ],
-      video: 'assets/img/portfolio/mifelviagens/mifelviagens.mp4'
+      video: 'assets/img/portfolio/mifelviagens/mifelviagens.mp4',
+      url: ''
     },
     {
       id: 'contabanco',
@@ -135,7 +141,8 @@
         'assets/img/portfolio/contabanco/contabanco (5).png',
         'assets/img/portfolio/contabanco/contabanco (6).png'
       ],
-      video: 'assets/img/portfolio/contabanco/contabanco.mp4'
+      video: 'assets/img/portfolio/contabanco/contabanco.mp4',
+      url: ''
     },
     {
       id: 'inquerito',
@@ -148,7 +155,8 @@
         'assets/img/portfolio/inquerito/inquerito(1).png',
         'assets/img/portfolio/inquerito/inquerito.png'
       ],
-      video: 'assets/img/portfolio/inquerito/inquerito.mp4'
+      video: 'assets/img/portfolio/inquerito/inquerito.mp4',
+      url: ''
     },
     {
       id: 'diagnosticocaes',
@@ -163,7 +171,8 @@
         'assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (3).png',
         'assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (4).png'
       ],
-      video: 'assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes.mp4'
+      video: 'assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes.mp4',
+      url: ''
     },
     {
       id: 'gmen',
@@ -173,7 +182,8 @@
       stack: ['HTML', 'CSS', 'JavaScript'],
       cover: 'assets/img/portfolio/gmen/gmen.png',
       images: ['assets/img/portfolio/gmen/gmen.png'],
-      video: 'assets/img/portfolio/gmen/gmen.mp4'
+      video: 'assets/img/portfolio/gmen/gmen.mp4',
+      url: ''
     },
     {
       id: 'sistemaaposta',
@@ -194,7 +204,8 @@
         'assets/img/portfolio/sistemaaposta/sistemaaposta (8).png',
         'assets/img/portfolio/sistemaaposta/sistemaaposta (9).png'
       ],
-      video: 'assets/img/portfolio/sistemaaposta/sistemaaposta.mp4'
+      video: 'assets/img/portfolio/sistemaaposta/sistemaaposta.mp4',
+      url: ''
     },
     {
       id: 'escoladeconducao',
@@ -210,7 +221,8 @@
         'assets/img/portfolio/escoladeconducao/escoladeconducao (4).png',
         'assets/img/portfolio/escoladeconducao/escoladeconducao (5).png'
       ],
-      video: 'assets/img/portfolio/escoladeconducao/escoladeconducao.mp4'
+      video: 'assets/img/portfolio/escoladeconducao/escoladeconducao.mp4',
+      url: ''
     },
     {
       id: 'quizfamiliaraimundo',
@@ -225,7 +237,8 @@
         'assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo (3).png',
         'assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo (4).png'
       ],
-      video: 'assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo.mp4'
+      video: 'assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo.mp4',
+      url: ''
     },
     {
       id: 'chatgenio',
@@ -239,7 +252,8 @@
         'assets/img/portfolio/chatgenio/chatgenio conversas.png',
         'assets/img/portfolio/chatgenio/chatgenio conversas2.png'
       ],
-      video: 'assets/img/portfolio/chatgenio/chatgenio.mp4'
+      video: 'assets/img/portfolio/chatgenio/chatgenio.mp4',
+      url: ''
     }
   ];
 
@@ -297,6 +311,7 @@
   const modalYear = document.getElementById('modalYear');
   const modalStack = document.getElementById('modalStack');
   const modalVideo = document.getElementById('modalVideo');
+  const modalUrl = document.getElementById('modalUrl'); // Botão/link opcional para visitar o site
 
   function openModal(project) {
     modalImg.src = project.images[0];
@@ -310,11 +325,23 @@
       `<img src="${src}" alt="" data-src="${src}" class="${i === 0 ? 'active' : ''}">`
     ).join('');
 
-    if (project.video) {
+    // Exibir botão de Vídeo se existir
+    if (project.video && modalVideo) {
       modalVideo.style.display = 'inline-flex';
       modalVideo.href = project.video;
-    } else {
+    } else if (modalVideo) {
       modalVideo.style.display = 'none';
+    }
+
+    // Exibir botão de URL hospedado se existir
+    if (modalUrl) {
+      if (project.url && project.url.trim() !== '') {
+        modalUrl.style.display = 'inline-flex';
+        modalUrl.href = project.url;
+        modalUrl.setAttribute('aria-label', `Visitar site do projecto ${project.title}`);
+      } else {
+        modalUrl.style.display = 'none';
+      }
     }
 
     modal.classList.add('open');
@@ -477,7 +504,7 @@
   document.querySelectorAll('.skill-ring').forEach(el => ringObserver.observe(el));
 
   /* =========================================================
-     CONTADORES DO HERO (Contagem de Anos, etc.)
+     CONTADORES DO HERO (Contagem de Anos, Repositórios, etc.)
      ========================================================= */
   const counters = document.querySelectorAll('[data-count]');
   const counterObserver = new IntersectionObserver((entries, obs) => {
@@ -499,10 +526,18 @@
   counters.forEach(el => counterObserver.observe(el));
 
   /* =========================================================
-     DADOS DINÂMICOS: Total de Tecnologias e Repositórios do GitHub
+     DADOS DINÂMICOS: Projectos Hospedados, Tecnologias e GitHub
      ========================================================= */
   window.addEventListener('DOMContentLoaded', () => {
-    // 1. Contagem dinâmica corrigida para contar exatamente os .skill-ring do HTML
+    // 1. Contabilizar apenas os projectos que contêm URL (Projectos Hospedados)
+    const hostedProjects = PROJECTS.filter(p => p.url && p.url.trim() !== '');
+    const hostedCountEl = document.getElementById('hostedCount');
+    if (hostedCountEl) {
+      hostedCountEl.textContent = hostedProjects.length;
+      hostedCountEl.setAttribute('data-count', hostedProjects.length);
+    }
+
+    // 2. Contagem de tecnologias a partir do HTML
     const skillItems = document.querySelectorAll('.skill-ring');
     const techCountEl = document.getElementById('techCount');
     if (techCountEl && skillItems.length > 0) {
@@ -510,7 +545,7 @@
       techCountEl.setAttribute('data-count', skillItems.length);
     }
 
-    // 2. Buscar o número de repositórios públicos diretamente da API do GitHub
+    // 3. Obter total de repositórios do GitHub via API
     const repoCountEl = document.getElementById('repoCount');
     if (repoCountEl) {
       fetch('https://api.github.com/users/eugeniocachiombo')
