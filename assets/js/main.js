@@ -6,6 +6,21 @@
      ========================================================= */
   const PROJECTS = [
     {
+      id: 'planok',
+      year: '2026',
+      title: 'PlanoK — Plano de Consumo',
+      desc: 'Sistema para auxiliar no controle de gastos e saúde financeira pessoal',
+      stack: ['Vue.js + Tailwind', 'Express/Prisma.js', 'Postgree'],
+      cover: 'assets/img/portfolio/planoconsumo/1.png',
+      images: [
+        'assets/img/portfolio/planoconsumo/1.png',
+        'assets/img/portfolio/planoconsumo/2.png',
+        'assets/img/portfolio/planoconsumo/3.png',
+        'assets/img/portfolio/planoconsumo/4.png',
+        'assets/img/portfolio/planoconsumo/5.png',
+      ]
+    },
+    {
       id: 'escogest',
       year: '2026',
       title: 'Escogest — Sistema de Gestão Escolar',
