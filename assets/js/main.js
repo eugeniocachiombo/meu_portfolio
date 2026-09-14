@@ -10,7 +10,7 @@
       year: '2026',
       title: 'PlanoK — Plano de Consumo',
       desc: 'Sistema para auxiliar no controle de gastos e saúde financeira pessoal',
-      stack: ['Vue.js + Tailwind', 'Express/Prisma.js', 'Postgree'],
+      stack: ['Vue.js + Tailwind', 'Express/Prisma.js', 'PostgreSQL'],
       cover: 'assets/img/portfolio/planoconsumo/1.png',
       images: [
         'assets/img/portfolio/planoconsumo/1.png',
@@ -264,7 +264,9 @@
       </article>`;
   }
 
-  grid.innerHTML = PROJECTS.map(cardHTML).join('');
+  if (grid) {
+    grid.innerHTML = PROJECTS.map(cardHTML).join('');
+  }
 
   /* =========================================================
      FILTROS
@@ -326,33 +328,40 @@
     document.body.style.overflow = '';
   }
 
-  grid.addEventListener('click', (e) => {
-    const card = e.target.closest('.project-card');
-    if (!card) return;
-    const project = PROJECTS.find(p => p.id === card.dataset.id);
-    if (project) openModal(project);
-  });
+  if (grid) {
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.project-card');
+      if (!card) return;
+      const project = PROJECTS.find(p => p.id === card.dataset.id);
+      if (project) openModal(project);
+    });
 
-  grid.addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    const card = e.target.closest('.project-card');
-    if (!card) return;
-    e.preventDefault();
-    const project = PROJECTS.find(p => p.id === card.dataset.id);
-    if (project) openModal(project);
-  });
+    grid.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.project-card');
+      if (!card) return;
+      e.preventDefault();
+      const project = PROJECTS.find(p => p.id === card.dataset.id);
+      if (project) openModal(project);
+    });
+  }
 
-  modalThumbs.addEventListener('click', (e) => {
-    const thumb = e.target.closest('img');
-    if (!thumb) return;
-    modalImg.src = thumb.dataset.src;
-    modalThumbs.querySelectorAll('img').forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
-  });
+  if (modalThumbs) {
+    modalThumbs.addEventListener('click', (e) => {
+      const thumb = e.target.closest('img');
+      if (!thumb) return;
+      modalImg.src = thumb.dataset.src;
+      modalThumbs.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  }
 
-  modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
+  if (modal) {
+    modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
+  }
+  
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    if (e.key === 'Escape' && modal && modal.classList.contains('open')) closeModal();
   });
 
   /* =========================================================
@@ -363,11 +372,13 @@
   const savedTheme = localStorage.getItem('portfolio-theme');
   if (savedTheme) root.setAttribute('data-theme', savedTheme);
 
-  themeToggle.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('portfolio-theme', next);
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('portfolio-theme', next);
+    });
+  }
 
   /* =========================================================
      MENU MOBILE
@@ -375,17 +386,19 @@
   const navToggle = document.getElementById('navToggle');
   const mobilePanel = document.getElementById('mobilePanel');
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = mobilePanel.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
+  if (navToggle && mobilePanel) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobilePanel.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
 
-  mobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mobilePanel.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }));
+    mobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobilePanel.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }));
+  }
 
   /* =========================================================
      NAV ACTIVE STATE (scroll spy)
@@ -438,11 +451,13 @@
       const label = el.querySelector('.ring-value');
       const offset = RING_CIRCUMFERENCE - (value / 100) * RING_CIRCUMFERENCE;
 
-      fill.style.strokeDasharray = `${RING_CIRCUMFERENCE}`;
-      fill.style.strokeDashoffset = `${RING_CIRCUMFERENCE}`;
-      requestAnimationFrame(() => {
-        fill.style.strokeDashoffset = String(offset);
-      });
+      if (fill) {
+        fill.style.strokeDasharray = `${RING_CIRCUMFERENCE}`;
+        fill.style.strokeDashoffset = `${RING_CIRCUMFERENCE}`;
+        requestAnimationFrame(() => {
+          fill.style.strokeDashoffset = String(offset);
+        });
+      }
 
       let current = 0;
       const duration = 1200;
@@ -450,7 +465,7 @@
       function tick(now) {
         const progress = Math.min((now - start) / duration, 1);
         current = Math.round(progress * value);
-        label.textContent = `${current}%`;
+        if (label) label.textContent = `${current}%`;
         if (progress < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -462,7 +477,7 @@
   document.querySelectorAll('.skill-ring').forEach(el => ringObserver.observe(el));
 
   /* =========================================================
-     CONTADORES DO HERO
+     CONTADORES DO HERO (Contagem de Anos, etc.)
      ========================================================= */
   const counters = document.querySelectorAll('[data-count]');
   const counterObserver = new IntersectionObserver((entries, obs) => {
@@ -484,7 +499,39 @@
   counters.forEach(el => counterObserver.observe(el));
 
   /* =========================================================
-     HERO: role rotator (substitui typed.js)
+     DADOS DINÂMICOS: Total de Tecnologias e Repositórios do GitHub
+     ========================================================= */
+  window.addEventListener('DOMContentLoaded', () => {
+    // 1. Contagem dinâmica corrigida para contar exatamente os .skill-ring do HTML
+    const skillItems = document.querySelectorAll('.skill-ring');
+    const techCountEl = document.getElementById('techCount');
+    if (techCountEl && skillItems.length > 0) {
+      techCountEl.textContent = skillItems.length;
+      techCountEl.setAttribute('data-count', skillItems.length);
+    }
+
+    // 2. Buscar o número de repositórios públicos diretamente da API do GitHub
+    const repoCountEl = document.getElementById('repoCount');
+    if (repoCountEl) {
+      fetch('https://api.github.com/users/eugeniocachiombo')
+        .then(response => {
+          if (!response.ok) throw new Error('Erro ao aceder à API do GitHub');
+          return response.json();
+        })
+        .then(data => {
+          if (data && typeof data.public_repos === 'number') {
+            repoCountEl.textContent = data.public_repos;
+            repoCountEl.setAttribute('data-count', data.public_repos);
+          }
+        })
+        .catch(error => {
+          console.warn('Não foi possível obter os repositórios do GitHub:', error);
+        });
+    }
+  });
+
+  /* =========================================================
+     HERO: role rotator
      ========================================================= */
   const roles = [
     'Desenvolvedor de Software Full Stack',
@@ -496,6 +543,7 @@
   let roleIndex = 0;
 
   function rotateRole() {
+    if (!roleEl) return;
     roleIndex = (roleIndex + 1) % roles.length;
     roleEl.style.opacity = '0';
     setTimeout(() => {
@@ -503,8 +551,10 @@
       roleEl.style.opacity = '1';
     }, 350);
   }
-  roleEl.style.transition = 'opacity .35s ease';
-  setInterval(rotateRole, 3600);
+  if (roleEl) {
+    roleEl.style.transition = 'opacity .35s ease';
+    setInterval(rotateRole, 3600);
+  }
 
   /* =========================================================
      HERO: reveal orquestrado ao carregar a página
@@ -537,81 +587,83 @@
     return valid;
   }
 
-  form.querySelectorAll('.field').forEach(field => {
-    const input = field.querySelector('input, textarea');
-    input.addEventListener('blur', () => validateField(field));
-    input.addEventListener('input', () => {
-      if (field.classList.contains('invalid')) validateField(field);
-    });
-  });
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fields = form.querySelectorAll('.field');
-    let allValid = true;
-    fields.forEach(field => { if (!validateField(field)) allValid = false; });
-
-    if (!allValid) {
-      formStatus.textContent = 'Verifica os campos assinalados.';
-      formStatus.style.color = 'var(--danger, #ef4444)';
-      return;
-    }
-
-    const btn = form.querySelector('button[type="submit"]');
-    const label = btn.querySelector('.btn-label');
-    const original = label.textContent;
-    label.textContent = 'A enviar...';
-    btn.disabled = true;
-
-    // Parâmetros enviados para o EmailJS
-    const templateParams = {
-      from_name: document.getElementById('name').value,
-      from_email: document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value,
-      to_email: 'eugeniocachiombo@gmail.com'
-    };
-
-    emailjs.send('service_848mbok', 'template_4zcejkp', templateParams)
-      .then(() => {
-        formStatus.textContent = 'Mensagem enviada com sucesso! Entrarei em contacto em breve.';
-        formStatus.style.color = 'var(--accent-2, #10b981)';
-        
-        // Alerta de sucesso com SweetAlert2
-        Swal.fire({
-          title: 'Mensagem Enviada!',
-          text: 'Obrigado pelo contacto. Entrarei em contacto em breve.',
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#10b981'
-        });
-
-        label.textContent = original;
-        btn.disabled = false;
-        form.reset();
-        fields.forEach(f => f.classList.remove('valid', 'invalid'));
-      }, (error) => {
-        console.error('Erro ao enviar:', error);
-        formStatus.textContent = 'Erro ao enviar a mensagem. Tenta novamente mais tarde.';
-        formStatus.style.color = 'var(--danger, #ef4444)';
-
-        // Alerta de erro com SweetAlert2
-        Swal.fire({
-          title: 'Ops!',
-          text: 'Erro ao enviar a mensagem. Tenta novamente mais tarde.',
-          icon: 'error',
-          confirmButtonText: 'Fechar',
-          confirmButtonColor: '#ef4444'
-        });
-
-        label.textContent = original;
-        btn.disabled = false;
+  if (form) {
+    form.querySelectorAll('.field').forEach(field => {
+      const input = field.querySelector('input, textarea');
+      input.addEventListener('blur', () => validateField(field));
+      input.addEventListener('input', () => {
+        if (field.classList.contains('invalid')) validateField(field);
       });
-  });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fields = form.querySelectorAll('.field');
+      let allValid = true;
+      fields.forEach(field => { if (!validateField(field)) allValid = false; });
+
+      if (!allValid) {
+        formStatus.textContent = 'Verifica os campos assinalados.';
+        formStatus.style.color = 'var(--danger, #ef4444)';
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]');
+      const label = btn.querySelector('.btn-label');
+      const original = label.textContent;
+      label.textContent = 'A enviar...';
+      btn.disabled = true;
+
+      const templateParams = {
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        to_email: 'eugeniocachiombo@gmail.com'
+      };
+
+      emailjs.send('service_848mbok', 'template_4zcejkp', templateParams)
+        .then(() => {
+          formStatus.textContent = 'Mensagem enviada com sucesso! Entrarei em contacto em breve.';
+          formStatus.style.color = 'var(--accent-2, #10b981)';
+          
+          Swal.fire({
+            title: 'Mensagem Enviada!',
+            text: 'Obrigado pelo contacto. Entrarei em contacto em breve.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#10b981'
+          });
+
+          label.textContent = original;
+          btn.disabled = false;
+          form.reset();
+          fields.forEach(f => f.classList.remove('valid', 'invalid'));
+        }, (error) => {
+          console.error('Erro ao enviar:', error);
+          formStatus.textContent = 'Erro ao enviar a mensagem. Tenta novamente mais tarde.';
+          formStatus.style.color = 'var(--danger, #ef4444)';
+
+          Swal.fire({
+            title: 'Ops!',
+            text: 'Erro ao enviar a mensagem. Tenta novamente mais tarde.',
+            icon: 'error',
+            confirmButtonText: 'Fechar',
+            confirmButtonColor: '#ef4444'
+          });
+
+          label.textContent = original;
+          btn.disabled = false;
+        });
+    });
+  }
 
   /* =========================================================
      ANO NO FOOTER
      ========================================================= */
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
 })();
