@@ -10,7 +10,7 @@
       year: '2026',
       title: 'PlanoK — Plano de Consumo',
       desc: 'Sistema para auxiliar no controle de gastos e saúde financeira pessoal',
-      stack: ['Vue.js + Tailwind', 'Express/Prisma.js', 'PostgreSQL'],
+      stack: ['Vue.js + Tailwind', 'Express/Prisma.js (API Backend)', 'PostgreSQL'],
       cover: 'assets/img/portfolio/planoconsumo/1.png',
       images: [
         'assets/img/portfolio/planoconsumo/1.png',
@@ -26,7 +26,7 @@
       year: '2026',
       title: 'Escogest — Sistema de Gestão Escolar',
       desc: 'Sistema completo de gestão escolar: matrículas, turmas, notas e comunicação entre escola e encarregados de educação.',
-      stack: ['Laravel', 'MySQL', 'Livewire', 'Bootstrap'],
+      stack: ['Vue.js + Tailwind', 'Laravel (API Backend)', 'MySQL'],
       cover: 'assets/img/portfolio/escogest/img32.PNG',
       images: [
         'assets/img/portfolio/escogest/img32.PNG',
@@ -50,7 +50,7 @@
       year: '2025',
       title: 'Pryanick Snack Bar',
       desc: 'Sistema de solicitação de alimentos e bebidas online e presencial, com gestão de pedidos em tempo real.',
-      stack: ['PHP', 'MySQL', 'JavaScript'],
+      stack: ['Laravel Livewire + Bootstrap 5', 'MySQL'],
       cover: 'assets/img/portfolio/pryanick/img1.png',
       images: [
         'assets/img/portfolio/pryanick/img1.png',
@@ -73,7 +73,7 @@
       year: '2025',
       title: 'John Sabores na Cozinha',
       desc: 'Sistema de publicação de receitas de cozinha, com categorias e área de autenticação para autores.',
-      stack: ['PHP', 'MySQL', 'Bootstrap'],
+      stack: ['Laravel Livewire + Bootstrap 5', 'JQuery', 'MySQL'],
       cover: 'assets/img/portfolio/johnsabores/home.png',
       images: [
         'assets/img/portfolio/johnsabores/home.png',
@@ -90,7 +90,7 @@
       year: '2024',
       title: 'Sistema Integrado para Estúdio Musical',
       desc: 'Sistema para ajudar produtores na gestão de um estúdio de música — agendamentos, sessões e clientes.',
-      stack: ['PHP', 'MySQL', 'JavaScript'],
+      stack: ['Laravel Livewire + Bootstrap 5', 'MySQL'],
       cover: 'assets/img/portfolio/sistemastudio/sistemastudio (1).png',
       images: [
         'assets/img/portfolio/sistemastudio/sistemastudio (1).png',
@@ -110,7 +110,7 @@
       year: '2024',
       title: 'Mifel Viagens',
       desc: 'Website de reservas de viagens que utiliza integração com o System Bank para processar pagamentos.',
-      stack: ['PHP', 'API REST', 'MySQL'],
+      stack: ['Laravel Livewire + Bootstrap 5', 'MySQL'],
       cover: 'assets/img/portfolio/mifelviagens/mifelviagens (1).png',
       images: [
         'assets/img/portfolio/mifelviagens/mifelviagens (1).png',
@@ -131,7 +131,7 @@
       year: '2024',
       title: 'System Bank',
       desc: 'Simulação de um sistema bancário que fornece uma API ligada ao sistema da agência Mifel Viagens.',
-      stack: ['PHP', 'API REST', 'MySQL'],
+      stack: ['Laravel Livewire + Bootstrap 5', 'API Laravel', 'MySQL'],
       cover: 'assets/img/portfolio/contabanco/contabanco (1).png',
       images: [
         'assets/img/portfolio/contabanco/contabanco (1).png',
@@ -149,7 +149,7 @@
       year: '2024',
       title: 'Inquérito',
       desc: 'Inquérito de perguntas e respostas para recolha de dados destinados à construção do website de uma produtora musical.',
-      stack: ['PHP', 'JavaScript'],
+      stack: ['HTML', 'CSS', 'Javascript','PHP', 'MySQL'],
       cover: 'assets/img/portfolio/inquerito/inquerito(1).png',
       images: [
         'assets/img/portfolio/inquerito/inquerito(1).png',
@@ -163,7 +163,7 @@
       year: '2024',
       title: 'Sistema de Diagnóstico de Cães',
       desc: 'Sistema para detectar doenças em animais com base na combinação de sintomas apresentados.',
-      stack: ['Java', 'MySQL'],
+      stack: ['Laravel Blade', 'MySQL'],
       cover: 'assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (1).png',
       images: [
         'assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (1).png',
@@ -179,7 +179,7 @@
       year: '2024',
       title: 'Salão de Beleza G-Men',
       desc: 'Simulação de um website institucional para o salão de beleza G-Men, com apresentação de serviços.',
-      stack: ['HTML', 'CSS', 'JavaScript'],
+      stack: ['Laravel Blade + Boostrap'],
       cover: 'assets/img/portfolio/gmen/gmen.png',
       images: ['assets/img/portfolio/gmen/gmen.png'],
       video: 'assets/img/portfolio/gmen/gmen.mp4',
@@ -190,7 +190,7 @@
       year: '2023',
       title: 'Sistema de Aposta',
       desc: 'Simulação de um sistema de aposta desportiva, com gestão de eventos e cálculo de cotas.',
-      stack: ['PHP', 'MySQL', 'jQuery'],
+      stack: ['HTML', 'CSS', 'Javascript', 'PHP', 'MySQL', 'jQuery'],
       cover: 'assets/img/portfolio/sistemaaposta/sistemaaposta (3).png',
       images: [
         'assets/img/portfolio/sistemaaposta/sistemaaposta (3).png',
@@ -212,7 +212,7 @@
       year: '2023',
       title: 'Escola de Condução',
       desc: 'Projecto de freelance, desenvolvido por recomendação de um estudante do ensino médio.',
-      stack: ['HTML', 'CSS', 'JavaScript'],
+      stack: ['HTML', 'CSS', 'Javascript', 'PHP', 'MySQL'],
       cover: 'assets/img/portfolio/escoladeconducao/escoladeconducao (3).png',
       images: [
         'assets/img/portfolio/escoladeconducao/escoladeconducao (3).png',
@@ -245,7 +245,7 @@
       year: '2022',
       title: 'Chat Genio',
       desc: 'Projecto simples de conversação em tempo real entre utilizadores.',
-      stack: ['JavaScript', 'PHP'],
+      stack: ['HTML', 'CSS', 'Javascript', 'PHP', 'MySQL', 'jQuery'],
       cover: 'assets/img/portfolio/chatgenio/chatgenio.png',
       images: [
         'assets/img/portfolio/chatgenio/chatgenio.png',
