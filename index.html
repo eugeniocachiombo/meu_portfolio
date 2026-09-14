@@ -1,1120 +1,411 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Meu Portfólio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eugénio Cachiombo — Desenvolvedor de Software Full Stack</title>
+  <meta name="description" content="Portfólio de Eugénio Cachiombo, Desenvolvedor de Software Full Stack em Luanda, Angola. Vue.js, React, Laravel, PHP e mais.">
 
-  <link href="assets/img/perfil/1.jpg" rel="icon">
-  <link href="assets/img/perfil/1.jpg" rel="2022le-touch-icon">
+  <link rel="icon" href="assets/img/perfil/1.jpg">
 
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="index-page">
+<body>
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <!-- Fundo técnico -->
+  <div class="blueprint-grid" aria-hidden="true"></div>
 
-    <!-- Foto de Perfil -->
-    <div class="profile-img mb-3">
-      <img src="assets/img/perfil/1.jpg" alt="Foto de perfil"
-        class="img-fluid rounded-circle border border-3 border-white shadow-sm"
-        style="width: 120px; height: 120px; object-fit: cover;">
-    </div>
+  <!-- Botão menu mobile -->
+  <button id="navToggle" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 
-    <!-- Nome -->
-    <a href="index.html" class="logo text-decoration-none mb-2">
-      <h1 class="sitename fw-bold text-white text-uppercase">Eugénio Cachiombo</h1>
+  <!-- Doca de navegação -->
+  <header class="dock" id="dock">
+    <a href="#hero" class="dock-mark" aria-label="Início">
+      <img src="assets/img/perfil/1.jpg" alt="Eugénio Cachiombo">
     </a>
 
-    <!-- Links Sociais -->
-    <div class="social-links d-flex justify-content-center gap-3 mb-4">
-      <a href="https://www.facebook.com/genioprogp99" target="_blank" class="social-link">
-        <i class="bi bi-facebook"></i>
-      </a>
-      <a href="https://github.com/eugeniocachiombo/" target="_blank" class="social-link">
-        <i class="bi bi-github"></i>
-      </a>
-      <a href="https://ao.linkedin.com/in/eug%C3%A9nio-cachiombo-a8008b271" target="_blank" class="social-link">
-        <i class="bi bi-linkedin"></i>
-      </a>
-    </div>
-
-    <!-- Navegação -->
-    <nav id="navmenu" class="navmenu w-100">
-      <ul class="list-unstyled px-0">
-        <li>
-          <a href="#hero" class="active nav-link">
-            <i class="bi bi-house-door navicon"></i><span>Início</span>
-          </a>
-        </li>
-        <li>
-          <a href="#about" class="nav-link">
-            <i class="bi bi-person-circle navicon"></i><span>Sobre</span>
-          </a>
-        </li>
-        <li>
-          <a href="#skills" class="nav-link">
-            <i class="bi bi-lightbulb navicon"></i><span>Habilidades</span>
-          </a>
-        </li>
-        <li>
-          <a href="#portfolio" class="nav-link">
-            <i class="bi bi-collection navicon"></i><span>Projectos</span>
-          </a>
-        </li>
-        <li>
-          <a href="#contact" class="nav-link">
-            <i class="bi bi-chat-dots navicon"></i><span>Contactos</span>
-          </a>
-        </li>
-
+    <nav class="dock-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#hero" class="dock-link active" data-label="Início">
+          <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 10v9.5h13V10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a></li>
+        <li><a href="#about" class="dock-link" data-label="Sobre">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c0-4 3.2-6.5 7-6.5s7 2.5 7 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a></li>
+        <li><a href="#skills" class="dock-link" data-label="Habilidades">
+          <svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.8 2.8M15.2 15.2 18 18M18 6l-2.8 2.8M8.8 15.2 6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a></li>
+        <li><a href="#portfolio" class="dock-link" data-label="Projectos">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="4.5" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3.5" y="14.5" width="7" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="14.5" width="7" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a></li>
+        <li><a href="#contact" class="dock-link" data-label="Contactos">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4.5 6.5 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a></li>
       </ul>
     </nav>
 
-    <span id="google_translate_element"></span>
-
+    <div class="dock-foot">
+      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dock-social">
+        <a href="https://www.facebook.com/genioprogp99" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M14 9h2.5V6H14c-2.2 0-3.5 1.4-3.5 3.6V11H8v3h2.5v6h3v-6h2.3l.4-3h-2.7V9.8c0-.6.3-.8.9-.8Z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://github.com/eugeniocachiombo/" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 2.5a9.8 9.8 0 0 0-3.1 19c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.2-3.3-1.2-.4-1.1-1-1.4-1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.2-4.5-1.1-4.5-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.6.6.7 1 1.5 1 2.6 0 3.7-2.3 4.6-4.5 4.8.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.5Z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://ao.linkedin.com/in/eug%C3%A9nio-cachiombo-a8008b271" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M6.9 8.6H4V20h2.9V8.6ZM5.4 4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM20 13.4c0-3-1.6-4.4-3.8-4.4a3.3 3.3 0 0 0-3 1.6V8.6H10.3c.1 1 0 11.4 0 11.4h2.9v-6.4c0-.3 0-.6.1-.9.3-.6.9-1.4 2-1.4 1.4 0 2 1.1 2 2.6V20H20v-6.6Z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
   </header>
 
+  <!-- Painel mobile -->
+  <div class="mobile-panel" id="mobilePanel">
+    <nav aria-label="Navegação mobile">
+      <a href="#hero" data-label="00">Início</a>
+      <a href="#about" data-label="01">Sobre</a>
+      <a href="#skills" data-label="02">Habilidades</a>
+      <a href="#portfolio" data-label="03">Projectos</a>
+      <a href="#contact" data-label="04">Contactos</a>
+    </nav>
+    <div class="mobile-panel-foot">
+      <a href="https://github.com/eugeniocachiombo/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://ao.linkedin.com/in/eug%C3%A9nio-cachiombo-a8008b271" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:eugeniocachiombo@gmail.com">Email</a>
+    </div>
+  </div>
 
+  <main>
 
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">Luanda, Angola — Disponível para novos projectos</p>
+          <h1 class="hero-title" id="heroTitle">
+            <span class="reveal-line">Eugénio</span>
+            <span class="reveal-line">Cachiombo</span>
+          </h1>
+          <p class="hero-role">
+            <span id="roleText">Desenvolvedor de Software Full Stack</span>
+          </p>
+          <p class="hero-desc">
+            Construo sistemas web à medida — do desenho da base de dados à interface final —
+            com Vue, React, Laravel e PHP. Cinco anos de formação em Engenharia Informática
+            transformados em soluções que resolvem problemas reais.
+          </p>
+          <div class="hero-cta">
+            <a href="#portfolio" class="btn btn-primary">Ver Projectos</a>
+            <a href="#contact" class="btn btn-ghost">Fale Comigo</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong data-count="17">0</strong><span>Tecnologias</span></div>
+            <div><strong data-count="38">0</strong><span>Repositórios</span></div>
+            <div><strong data-count="10">0</strong><span>Projectos reais</span></div>
+          </div>
+        </div>
 
-  <main class="main">
-
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/perfil/5.jpg" alt="" data-aos="fade-in" class="">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Eugénio Cachiombo</h2>
-        <p> <span class="typed"
-            data-typed-items="Seja muito bem-vindo ao meu portfólio, Eu sou Desenvolvedor de Software e estou sempre disposto a criar soluções impactantes"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <div class="hero-frame">
+          <div class="frame-tick tick-top"></div>
+          <div class="frame-tick tick-left"></div>
+          <span class="frame-label label-top">FIG. 01 — PERFIL</span>
+          <span class="frame-label label-bottom">LUANDA · AO</span>
+          <div class="frame-photo">
+            <img src="assets/img/perfil/2.jpg" alt="Foto de Eugénio Cachiombo">
+          </div>
+        </div>
       </div>
+      <a href="#about" class="scroll-cue" aria-label="Descer para a secção Sobre">
+        <span></span>
+      </a>
     </section>
 
-    <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Sobre</h2>
-        <p> Sou <b>Licenciado em Engenharia Informática</b> pela <b>Universidade Independente de Angola (UnIA)</b>, onde
-          desenvolvi ao longo de cinco anos uma base sólida em tecnologias e metodologias de desenvolvimento de
-          software. Durante o percurso académico, adquiri experiência prática com diversas ferramentas tecnológicas
-          voltadas para a criação de soluções eficientes e inovadoras para desafios do mundo real. 
-          <br>
-          
-        </p>
+    <!-- SOBRE -->
+    <section id="about" class="about">
+      <div class="section-head">
+        <h2>Sobre mim</h2>
+        <p>Licenciado, curioso por natureza, orientado a resolver problemas com código.</p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 align-items-center">
+      <div class="about-grid">
+        <div class="about-narrative">
+          <p>
+            Sou <strong>Licenciado em Engenharia Informática</strong> pela
+            <strong>Universidade Independente de Angola (UnIA)</strong>, onde construí, ao longo
+            de cinco anos, uma base sólida em tecnologias e metodologias de desenvolvimento de
+            software. Ao longo do percurso académico ganhei experiência prática com diversas
+            ferramentas voltadas para criar soluções eficientes para desafios do mundo real.
+          </p>
 
-          <!-- Foto de Perfil -->
-          <div class="col-lg-4 text-center">
-            <img src="assets/img/perfil/2.jpg" class="img-fluid rounded-circle shadow-lg" alt="Foto de perfil">
+          <div class="about-facts">
+            <div class="fact"><span>Aniversário</span><strong>27 Abril 1999</strong></div>
+            <div class="fact"><span>Idade</span><strong>27 anos</strong></div>
+            <div class="fact"><span>Cidade</span><strong>Luanda, Angola</strong></div>
+            <div class="fact"><span>Nível</span><strong>Pleno</strong></div>
+            <div class="fact"><span>Disponibilidade</span><strong class="fact-available">Disponível</strong></div>
+            <div class="fact"><span>Email</span><strong><a href="mailto:eugeniocachiombo@gmail.com">eugeniocachiombo@gmail.com</a></strong></div>
           </div>
 
-          <!-- Informações -->
-          <div class="col-lg-8 content">
-            <h2 class="fw-bold mb-3 " style="color: #234060;">Desenvolvedor de Software</h2>
-            <p class="text-muted mb-4">
-              Profissional apaixonado por tecnologia, com foco em desenvolvimento de soluções web modernas e escaláveis.
-            </p>
+          <a href="assets/docs/CV - Eugénio Cachiombo.pdf" target="_blank" class="btn btn-outline cv-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Baixar Curriculum
+          </a>
+        </div>
 
-            <div class="row g-3">
-              <div class="col-md-6">
-                <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-calendar-event me-2 "
-                      style="color: #234060;"></i><strong>Aniversário:</strong>
-                    27 Abril 1999</li>
-                  <li class="mb-2"><i class="bi bi-person-badge me-2 "
-                      style="color: #234060;"></i><strong>Idade:</strong> 27 anos
-                  </li>
-                  <li class="mb-2"><i class="bi bi-envelope me-2 " style="color: #234060;"></i><strong>Email:</strong>
-                    <a href="mailto:eugeniocachiombo@gmail.com"
-                      class="text-decoration-none text-dark">eugeniocachiombo@gmail.com</a>
-                  </li>
-                  <li class="mb-2"><i class="bi bi-geo-alt me-2 " style="color: #234060;"></i><strong>Cidade:</strong>
-                    Luanda,
-                    Angola</li>
-                  <li class="mb-2"><i class="bi bi-award me-2 " style="color: #234060;"></i><strong>Nível:</strong>
-                    Pleno</li>
-                </ul>
+        <div class="about-timeline">
+          <h3>Percurso</h3>
+          <ol class="timeline">
+            <li>
+              <span class="timeline-dot"></span>
+              <div>
+                <strong>2018 — 2024</strong>
+                <p>Licenciatura em Engenharia Informática, Universidade Independente de Angola (UnIA).</p>
               </div>
-
-              <div class="col-md-6">
-                <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-telephone me-2 " style="color: #234060;"></i><strong>Telefone
-                      1:</strong> +244
-                    921-439-849</li>
-                  <li class="mb-2"><i class="bi bi-telephone me-2 " style="color: #234060;"></i><strong>Telefone
-                      2:</strong> +244
-                    957-387-033</li>
-                  <li class="mb-2"><i class="bi bi-globe me-2 " style="color: #234060;"></i><strong>Website:</strong>
-                    <a href="https://eugeniocachiombo.github.io/meu_portfolio" target="_blank"
-                      class="text-decoration-none text-dark">
-                      eugeniocachiombo.github.io
-                    </a>
-                  </li>
-                  <li class="mb-2"><i class="bi bi-briefcase me-2 "
-                      style="color: #234060;"></i><strong>Disponibilidade:</strong>
-                    Disponível</li>
-                  <li class="mb-2"><i class="bi bi-file-earmark-arrow-down me-2 "
-                      style="color: #234060;"></i><strong>Curriculum:</strong>
-                    <a href="assets/docs/CV - Eugénio Cachiombo.pdf" target="_blank"
-                      class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1">Baixar</a>
-                  </li>
-                </ul>
+            </li>
+            <li>
+              <span class="timeline-dot"></span>
+              <div>
+                <strong>2022</strong>
+                <p>Primeiros projectos pessoais — sistemas de conversação e jogos de perguntas e respostas.</p>
               </div>
-            </div>
-          </div>
-
+            </li>
+            <li>
+              <span class="timeline-dot"></span>
+              <div>
+                <strong>2023 — 2024</strong>
+                <p>Freelance e projectos aplicados: sistemas de aposta, diagnóstico veterinário, estúdio musical e integração bancária simulada.</p>
+              </div>
+            </li>
+            <li>
+              <span class="timeline-dot"></span>
+              <div>
+                <strong>2025 — 2026</strong>
+                <p>Sistemas de maior escala: gestão escolar, plataformas de pedidos e publicação de conteúdo.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
 
-    </section>
-
-    <section id="stats" class="stats section py-5 text-light">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 text-center justify-content-center">
-
-          <!-- Tecnologias Dominantes -->
-          <div class="col-lg-4 col-md-6">
-            <div class="stats-item p-4 rounded shadow-sm bg-gradient" style="background: rgba(255, 255, 255, 0.05);">
-              <i class="bi bi-cpu fs-1 text-primary mb-2"></i>
-              <h3 class="fw-bold mb-2 d-flex justify-content-center">
-                <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1"
-                  class="purecounter"></span><span class="text-white">+</span>
-              </h3>
-              <p class="mb-1 fw-semibold">Tecnologias Dominantes</p>
-              <small class="text-secondary d-block">Linguagens e ferramentas que domino</small>
-            </div>
+      <div class="how-i-work">
+        <h3>Como trabalho</h3>
+        <div class="work-cards">
+          <div class="work-card">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <h4>Do requisito ao esquema</h4>
+            <p>Começo por entender o problema real antes de desenhar a base de dados ou a interface.</p>
           </div>
-
-          <!-- Repositórios Públicos -->
-          <div class="col-lg-4 col-md-6">
-            <div class="stats-item p-4 rounded shadow-sm bg-gradient" style="background: rgba(255, 255, 255, 0.05);">
-              <i class="bi bi-github fs-1 text-success mb-2"></i>
-              <h3 class="fw-bold mb-2">
-                <span data-purecounter-start="0" data-purecounter-end="38" data-purecounter-duration="1"
-                  class="purecounter"></span>
-              </h3>
-              <p class="mb-1 fw-semibold">Repositórios Públicos</p>
-              <small class="text-secondary d-block">Projetos disponíveis no GitHub</small>
-            </div>
+          <div class="work-card">
+            <svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <h4>Código legível primeiro</h4>
+            <p>Prefiro soluções simples e manuteníveis a truques espertos que ninguém mais entende.</p>
           </div>
-
-          <!-- Participação em Projectos -->
-          <div class="col-lg-4 col-md-6">
-            <div class="stats-item p-4 rounded shadow-sm bg-gradient" style="background: rgba(255, 255, 255, 0.05);">
-              <i class="bi bi-folder fs-1 text-warning mb-2"></i>
-              <h3 class="fw-bold mb-2">
-                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
-                  class="purecounter"></span>
-              </h3>
-              <p class="mb-1 fw-semibold">Participação em Projectos Reiais</p>
-              <small class="text-secondary d-block">Projetos reservados e experimentais</small>
-            </div>
+          <div class="work-card">
+            <svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M3 12h4M17 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <h4>Integrações que funcionam</h4>
+            <p>Gosto de ligar sistemas entre si — pagamentos, autenticação, APIs próprias e de terceiros.</p>
           </div>
-
         </div>
-
       </div>
-
     </section>
 
-
-
-
-    <section id="skills" class="skills section light-background">
-
-
-      <div class="container section-title" data-aos="fade-up">
+    <!-- COMPETÊNCIAS -->
+    <section id="skills" class="skills">
+      <div class="section-head">
         <h2>Habilidades</h2>
-        <p>Estatísticamente abaixo represento os meus graus de conhecimentos a respeito de cada tecnologia </p>
+        <p>Nível de conhecimento em cada tecnologia, agrupado por área.</p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Vue.js</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>React</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>TypeScript</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Tailwind CSS</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Bootstrap</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Jquery</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
+      <div class="skills-groups">
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <div class="skill-grid">
+            <div class="skill-ring" data-value="80"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Vue.js</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>React</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>TypeScript</p></div>
+            <div class="skill-ring" data-value="80"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>HTML</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>CSS</p></div>
+            <div class="skill-ring" data-value="60"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Tailwind CSS</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>JavaScript</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Bootstrap</p></div>
+            <div class="skill-ring" data-value="60"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>jQuery</p></div>
           </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Framework Laravel</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Laravel Livewire</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Java</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Git</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>GitHub</span> <i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>MySQL</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>SQLite</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
-      </div>
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <div class="skill-grid">
+            <div class="skill-ring" data-value="80"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>PHP</p></div>
+            <div class="skill-ring" data-value="80"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Laravel</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Laravel Livewire</p></div>
+            <div class="skill-ring" data-value="60"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Express.js</p></div>
+            <div class="skill-ring" data-value="60"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Prisma.js</p></div>
+          </div>
+        </div>
 
+        <div class="skill-group">
+          <h3>Dados &amp; Ferramentas</h3>
+          <div class="skill-grid">
+            <div class="skill-ring" data-value="80"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>MySQL</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>SQLite</p></div>
+            <div class="skill-ring" data-value="60"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>PostgreeSQL</p></div>
+            <div class="skill-ring" data-value="70"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>Git</p></div>
+            <div class="skill-ring" data-value="50"><div class="ring"><svg viewBox="0 0 80 80"><circle class="ring-track" cx="40" cy="40" r="34"/><circle class="ring-fill" cx="40" cy="40" r="34"/></svg><span class="ring-value">0%</span></div><p>GitHub</p></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-    <section id="portfolio" class="portfolio section light-background">
-
-      <div class="container section-title" data-aos="fade-up">
+    <!-- PROJECTOS -->
+    <section id="portfolio" class="portfolio">
+      <div class="section-head">
         <h2>Projectos</h2>
-        <p>Alguns dos meus principais projectos desenvolvidos ao longo dos anos</p>
+        <p>Uma selecção dos sistemas que desenvolvi ao longo dos anos.</p>
       </div>
 
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <!-- Filtros -->
-          <ul class="portfolio-filters isotope-filters d-flex justify-content-center gap-3" data-aos="fade-up"
-            data-aos-delay="100">
-            <li data-filter="*" class="filter-active">Todos</li>
-            <li data-filter=".filter-2022">2022</li>
-            <li data-filter=".filter-2023">2023</li>
-            <li data-filter=".filter-2024">2024</li>
-            <li data-filter=".filter-2025">2025</li>
-            <li data-filter=".filter-2026">2026</li>
-          </ul>
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2026">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/escogest/img32.PNG" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Escogest - Sistema de Gestão Escolar</h4>
-                  <p>Sistema de Gestão Escolar</p>
-                  <a href="assets/img/portfolio/escogest/img32.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/1.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/4.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/5.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/6.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/7.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/8.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/9.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/10.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/11.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/12.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/13.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escogest/28.PNG" data-gallery="portfolio-gallery-escogest"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2025">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/pryanick/img1.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Pryanick Snack Bar</h4>
-                  <p>Sistema De Solicitação de Alimentos e Bebidas Online e Presencial</p>
-                  <a href="assets/img/portfolio/pryanick/img1.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img0.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img2.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img3.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img4.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img5.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img6.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img7.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img8.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img9.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img10.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/pryanick/img11.png" data-gallery="portfolio-gallery-pryanick"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                </div>
-              </div>
-            </div>
-
-             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2025">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/johnsabores/home.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>John Sabores na Cozinha</h4>
-                  <p>Sistema De Publicação de Receitas de Cozinha</p>
-                  <a href="assets/img/portfolio/johnsabores/home.png" data-gallery="portfolio-gallery-johnsabores"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/johnsabores/login.png" data-gallery="portfolio-gallery-johnsabores"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/johnsabores/cat.png" data-gallery="portfolio-gallery-johnsabores"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/johnsabores/cat2.png" data-gallery="portfolio-gallery-johnsabores"
-                    class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/johnsabores/receita.png" data-gallery="portfolio-gallery-johnsabores"
-                    class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/johnsabores/receita2.png" data-gallery="portfolio-gallery-johnsabores"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                </div>
-              </div>
-            </div>
-          
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2024">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/sistemastudio/sistemastudio (1).png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Sistema Integrado para Estúdio Musical</h4>
-                  <p>Sistema para ajudar produtores na gestão de um estúdio de música </p>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (1).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (2).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (3).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (4).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (5).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (6).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (7).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio (8).png"
-                    data-gallery="portfolio-gallery-sistemastudio" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemastudio/sistemastudio.mp4" title="Video" class="details-link"><i
-                      class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2024">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/mifelviagens/mifelviagens (1).png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Mifel Viagens</h4>
-                  <p>Website de reservas de viagens. utiliza a integração do system-bank para fazer pagamentos</p>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (1).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (2).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (3).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (4).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (5).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (6).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (7).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (8).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens (9).png"
-                    data-gallery="portfolio-gallery-mifelviagens" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/mifelviagens/mifelviagens.mp4" title="Video" class="details-link"><i
-                      class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2024">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/contabanco/contabanco (1).png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>System Bank</h4>
-                  <p>Este projecto é simulação de um sistema bancário. O mesmo fornece uma api que interliga com o
-                    sistema da agência Mifel Viagens</p>
-                  <a href="assets/img/portfolio/contabanco/contabanco (1).png"
-                    data-gallery="portfolio-gallery-contabanco" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/contabanco/contabanco (2).png"
-                    data-gallery="portfolio-gallery-contabanco" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/contabanco/contabanco (3).png"
-                    data-gallery="portfolio-gallery-contabanco" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/contabanco/contabanco (4).png"
-                    data-gallery="portfolio-gallery-contabanco" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/contabanco/contabanco (5).png"
-                    data-gallery="portfolio-gallery-contabanco" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/contabanco/contabanco (6).png"
-                    data-gallery="portfolio-gallery-contabanco" class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/contabanco/contabanco.mp4" title="Video" class="details-link"><i
-                      class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2024">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/inquerito/inquerito(1).png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Inquerito</h4>
-                  <p>Este projecto é um inquerito de perguntas e respostas para colheita de dados para a construção de
-                    um website de uma produtora musical</p>
-                  <a href="assets/img/portfolio/inquerito/inquerito(1).png" data-gallery="portfolio-gallery-inquerito"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/inquerito/inquerito.png" data-gallery="portfolio-gallery-inquerito"
-                    class="glightbox"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/inquerito/inquerito.mp4" title="Video" class="details-link"><i
-                      class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2024">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (1).png" class="img-fluid"
-                  alt="">
-                <div class="portfolio-info">
-                  <h4>Sistema de diagnóstico de Cães</h4>
-                  <p>Sistema para detectar doença de animais com base em combinação de sintómas</p>
-                  <a href="assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (1).png"
-                    data-gallery="portfolio-gallery-sistemadiagnosticocaes" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (2).png"
-                    data-gallery="portfolio-gallery-sistemadiagnosticocaes" class="glightbox"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (3).png"
-                    data-gallery="portfolio-gallery-sistemadiagnosticocaes" class="glightbox"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes (4).png"
-                    data-gallery="portfolio-gallery-sistemadiagnosticocaes" class="glightbox"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemadiagnosticocaes/sistemadiagnosticocaes.mp4" title="Video"
-                    class="details-link"><i class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2024">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/gmen/gmen.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Salão de Beleza G-Men</h4>
-                  <p>Este projecto é simulação de um website para um salão de beleza da G-Men</p>
-                  <a href="assets/img/portfolio/gmen/gmen.png" data-gallery="portfolio-gallery-gmen"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/gmen/gmen.mp4" title="Video" class="details-link"><i
-                      class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2023">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/sistemaaposta/sistemaaposta (3).png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Sistema de Aposta</h4>
-                  <p>Este projecto é simulação de um sistema de aposta</p>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (3).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (1).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (2).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (10).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (4).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (5).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (6).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (7).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (8).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta (9).png"
-                    data-gallery="portfolio-gallery-sistemaaposta" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/sistemaaposta/sistemaaposta.mp4" title="Video" class="details-link"><i
-                      class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2023">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/escoladeconducao/escoladeconducao (3).png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Escola de Condução</h4>
-                  <p>Um projecto que trabalhei como Freelancer por recomendação de um estudante do ensino médio</p>
-                  <a href="assets/img/portfolio/escoladeconducao/escoladeconducao (3).png"
-                    data-gallery="portfolio-gallery-escoladeconducao" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escoladeconducao/escoladeconducao (1).png"
-                    data-gallery="portfolio-gallery-escoladeconducao" class="glightbox "><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escoladeconducao/escoladeconducao (2).png"
-                    data-gallery="portfolio-gallery-escoladeconducao" class="glightbox "><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escoladeconducao/escoladeconducao (4).png"
-                    data-gallery="portfolio-gallery-escoladeconducao" class="glightbox "><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escoladeconducao/escoladeconducao (5).png"
-                    data-gallery="portfolio-gallery-escoladeconducao" class="glightbox "><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/escoladeconducao/escoladeconducao.mp4" title="Video"
-                    class="details-link"><i class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2023">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo (1).png" class="img-fluid"
-                  alt="">
-                <div class="portfolio-info">
-                  <h4>Quiz da Família Raimundo</h4>
-                  <p>Jogo de perguntas e respostas acerca da família Raimundo</p>
-                  <a href="assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo (1).png"
-                    data-gallery="portfolio-gallery-quizfamiliaraimundo" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo (2).png"
-                    data-gallery="portfolio-gallery-quizfamiliaraimundo" class="glightbox "><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo (3).png"
-                    data-gallery="portfolio-gallery-quizfamiliaraimundo" class="glightbox "><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo (4).png"
-                    data-gallery="portfolio-gallery-quizfamiliaraimundo" class="glightbox "><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/quizfamiliaraimundo/quizfamiliaraimundo.mp4" title="Video"
-                    class="details-link"><i class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-2022">
-              <div class="portfolio-content position-relative shadow-sm rounded-4 overflow-hidden">
-                <img src="assets/img/portfolio/chatgenio/chatgenio.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Chat Genio</h4>
-                  <p>Um projecto simples de conversação</p>
-                  <a href="assets/img/portfolio/chatgenio/chatgenio.png" data-gallery="portfolio-gallery-chatgenio"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/chatgenio/chatgenio conversas.png"
-                    data-gallery="portfolio-gallery-chatgenio" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/chatgenio/chatgenio conversas2.png"
-                    data-gallery="portfolio-gallery-chatgenio" class="glightbox "><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/chatgenio/chatgenio.mp4" title="Video" class="details-link"><i
-                      class="bi bi-play"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="filters" role="tablist" aria-label="Filtrar projectos por ano">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="2026">2026</button>
+        <button class="filter-btn" data-filter="2025">2025</button>
+        <button class="filter-btn" data-filter="2024">2024</button>
+        <button class="filter-btn" data-filter="2023">2023</button>
+        <button class="filter-btn" data-filter="2022">2022</button>
       </div>
 
+      <div class="project-grid" id="projectGrid"><!-- injectado via JS a partir de PROJECTS --></div>
     </section>
 
-
-
-    <section id="services" class="services section d-none">
-
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Serviços</h2>
-        <p>Durante o meu percurso como programador, tive o privilégio de receber proposta de alguns projectos de amigos
-          e colegas da universidade. Propóstas estas que tive a oportunidade de utilizar os meus conhecimentos na área
-          de TI e que serviram no final como projectos de preenchimento para o meu portfólio</p>
-      </div>
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                occaecati cupiditate non provident</p>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-                soluta nobis est eligendi</p>
-            </div>
-          </div>
-
+    <!-- Modal de projecto -->
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close></div>
+      <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="project-modal-close" data-close aria-label="Fechar">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <div class="project-modal-media">
+          <img id="modalImg" src="" alt="">
+          <div class="project-modal-thumbs" id="modalThumbs"></div>
         </div>
-
-      </div>
-
-    </section>
-
-
-    <section id="testimonials" class="d-none testimonials section light-background">
-
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="2022lication/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wr2022er">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                    Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum
-                    velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
-                    minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim
-                    duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt
-                    culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
+        <div class="project-modal-body">
+          <span class="badge" id="modalYear">2024</span>
+          <h3 id="modalTitle">Título</h3>
+          <p id="modalDesc">Descrição</p>
+          <div class="stack-tags" id="modalStack"></div>
+          <a href="#" id="modalVideo" class="btn btn-outline" target="_blank" style="display:none">
+            Ver vídeo de demonstração
+          </a>
         </div>
-
       </div>
+    </div>
 
-    </section>
-
-
-    <section id="contact" class="contact section light-background">
-
-      <div class="container section-title" data-aos="fade-up">
+    <!-- CONTACTO -->
+    <section id="contact" class="contact">
+      <div class="section-head">
         <h2>Contactos</h2>
-        <p>Entre em contacto comigo através das informações abaixo</p>
+        <p>Tens um projecto em mente? Escreve — respondo o mais rápido possível.</p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-
-          <!-- Coluna: informações de contacto -->
-          <div class="col-lg-6 d-flex align-items-stretch">
-            <div class="info-wrap w-100 shadow-sm p-4 rounded-4 bg-white">
-
-              <!-- Endereço -->
-              <div class="info-item d-flex align-items-start mb-4" data-aos="fade-right" data-aos-delay="200">
-                <div
-                  class="icon bg-light text-primary rounded-circle d-flex align-items-center justify-content-center me-3"
-                  style="width: 48px; height: 48px;">
-                  <i class="bi bi-geo-alt fs-5"></i>
-                </div>
-                <div>
-                  <h5 class="fw-bold mb-1">Endereço</h5>
-                  <p class="mb-0 small text-muted">Bairro Militar - Talatona, Luanda, Angola</p>
-                </div>
-              </div>
-
-              <!-- Telefone -->
-              <div class="info-item d-flex align-items-start mb-4" data-aos="fade-right" data-aos-delay="300">
-                <div
-                  class="icon bg-light text-success rounded-circle d-flex align-items-center justify-content-center me-3"
-                  style="width: 48px; height: 48px;">
-                  <i class="bi bi-telephone fs-5"></i>
-                </div>
-                <div>
-                  <h5 class="fw-bold mb-1">Telefone</h5>
-                  <p class="mb-0 small text-muted">+244 921 439 849</p>
-                  <p class="mb-0 small text-muted">+244 957 387 033</p>
-                </div>
-              </div>
-
-              <!-- Email -->
-              <div class="info-item d-flex align-items-start" data-aos="fade-right" data-aos-delay="400">
-                <div
-                  class="icon bg-light text-danger rounded-circle d-flex align-items-center justify-content-center me-3"
-                  style="width: 48px; height: 48px;">
-                  <i class="bi bi-envelope fs-5"></i>
-                </div>
-                <div>
-                  <h5 class="fw-bold mb-1">Email</h5>
-                  <p class="mb-0 small text-muted">eugeniocachiombo@gmail.com</p>
-                  <p class="mb-0 small text-muted">eugeniogcachiombo@gmail.com</p>
-                </div>
-              </div>
-
-            </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-item">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div><span>Endereço</span><p>Bairro Militar — Talatona, Luanda, Angola</p></div>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2c1.1.4 2.3.6 3.6.6a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.9 21 3 13.1 3 3.6a1 1 0 0 1 1-1H7.2a1 1 0 0 1 1 1c0 1.3.2 2.5.6 3.6a1 1 0 0 1-.2 1L6.6 10.8Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div><span>Telefone</span><p>+244 921 439 849<br>+244 957 387 033</p></div>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4.5 6.5 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span>Email</span><p>eugeniocachiombo@gmail.com<br>eugeniogcachiombo@gmail.com</p></div>
           </div>
 
-          <!-- Coluna: mapa -->
-          <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="300">
-            <div class="w-100 shadow-sm rounded-4 overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d159257.2598474344!2d13.2241092!3d-9.150044!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5a4000e3fbecc1%3A0x4fbd61c13d833556!2sTalatona%2C%20Angola!5e0!3m2!1sen!2sus!4v1699972202109!5m2!1sen!2sus"
-                frameborder="0" style="border:0; width:100%; height:100%;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d159257.2598474344!2d13.2241092!3d-9.150044!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5a4000e3fbecc1%3A0x4fbd61c13d833556!2sTalatona%2C%20Angola!5e0!3m2!1sen!2sus!4v1699972202109!5m2!1sen!2sus"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — Talatona, Luanda"></iframe>
           </div>
-
         </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="O teu nome" required>
+            <span class="field-error">Escreve o teu nome.</span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@exemplo.com" required>
+            <span class="field-error">Escreve um email válido.</span>
+          </div>
+          <div class="field">
+            <label for="subject">Assunto</label>
+            <input type="text" id="subject" name="subject" placeholder="Sobre o que é?" required>
+            <span class="field-error">Escreve um assunto.</span>
+          </div>
+          <div class="field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" placeholder="Conta-me mais sobre o projecto..." required></textarea>
+            <span class="field-error">Escreve a tua mensagem.</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <span class="btn-label">Enviar Mensagem</span>
+          </button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
       </div>
-
     </section>
-
 
   </main>
 
-  <footer id="footer" class="footer py-4 position-relative light-background"
-    style="border-top: 2px solid #f8f9fa; color: white;">
-
-    <div class="container text-center text-white">
-      <h5 class="mb-3 fw-semibold" style="color: white;">Eugénio Cachiombo</h5>
-
-      <!-- Ícones sociais -->
-      <div class="social-links mb-3">
-        <a href="https://github.com/eugeniocachiombo/" target="_blank" class="mx-2 text-white"
-          style="font-size: 1.2rem; transition: 0.3s;">
-          <i class="bi bi-github"></i>
-        </a>
-        <a href="https://ao.linkedin.com/in/eug%C3%A9nio-cachiombo-a8008b271" target="_blank" class="mx-2 text-white"
-          style="font-size: 1.2rem; transition: 0.3s;">
-          <i class="bi bi-linkedin"></i>
-        </a>
-        <a href="https://wa.me/244921439849" target="_blank" class="mx-2 text-white"
-          style="font-size: 1.2rem; transition: 0.3s;">
-          <i class="bi bi-whatsapp"></i>
-        </a>
-        <a href="mailto:eugeniocachiombo@gmail.com" class="mx-2 text-white"
-          style="font-size: 1.2rem; transition: 0.3s;">
-          <i class="bi bi-envelope"></i>
-        </a>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Eugénio Cachiombo</h3>
+        <p>Desenvolvedor de Software Full Stack, a construir sistemas web em Luanda, Angola.</p>
+        <div class="footer-social">
+          <a href="https://github.com/eugeniocachiombo/" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://ao.linkedin.com/in/eug%C3%A9nio-cachiombo-a8008b271" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://www.facebook.com/genioprogp99" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+          <a href="https://wa.me/244921439849" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+        </div>
       </div>
 
-      <!-- Direitos autorais -->
-      <p class="mb-0 small text-white">
-        © <strong>2025</strong> <span class="sitename" style="color: white;">Meu Portfólio</span> — Todos os
-        direitos reservados.
-      </p>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <a href="#hero">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#portfolio">Projectos</a>
+        <a href="#contact">Contactos</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <a href="mailto:eugeniocachiombo@gmail.com">eugeniocachiombo@gmail.com</a>
+        <a href="tel:+244921439849">+244 921 439 849</a>
+        <a href="assets/docs/CV - Eugénio Cachiombo.pdf" target="_blank">Baixar Curriculum</a>
+      </div>
     </div>
 
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Eugénio Cachiombo. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-
-  <div id="preloader"></div>
-
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
   <script src="assets/js/main.js"></script>
-  <script src="assets/jquery/jquery.js"></script>
-  <script type="text/javascript" src="assets/js/translate.js"></script>
-
-
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'pt',
-        includedLanguages: 'pt,en,fr,es',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-
-
 </body>
 
 </html>
