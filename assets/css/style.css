@@ -263,21 +263,6 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   font-size: clamp(2.8rem, 6vw, 4.6rem);
   margin-bottom: var(--sp-3);
 }
-.reveal-line {
-  display: block;
-  overflow: hidden;
-  position: relative;
-}
-.reveal-line span,
-.reveal-line {
-  animation: none;
-}
-.hero-title .reveal-line {
-  clip-path: inset(0 0 0 0);
-}
-.hero-title .reveal-line::before {
-  content: attr(data-text);
-}
 
 .hero-role {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
@@ -559,57 +544,128 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   color: var(--accent-2);
 }
 
-/* ---- Project modal ---- */
+/* =========================================================
+   MODAL DE PROJECTO — AMPLIADO & OTIMIZADO
+   ========================================================= */
 .project-modal {
-  position: fixed; inset: 0; z-index: 200;
-  display: flex; align-items: center; justify-content: center;
-  padding: var(--sp-5);
-  opacity: 0; pointer-events: none;
-  transition: opacity .3s var(--ease);
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.project-modal.open { opacity: 1; pointer-events: auto; }
-.project-modal-backdrop { position: absolute; inset: 0; background: rgba(8, 9, 14, 0.82); backdrop-filter: blur(4px); }
+
+.project-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+}
 
 .project-modal-panel {
   position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 90vh;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  max-width: 920px;
-  width: 100%;
-  max-height: 88vh;
-  overflow-y: auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  transform: translateY(24px) scale(.98);
-  transition: transform .35s var(--ease);
+  grid-template-columns: 1fr 380px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.project-modal.open .project-modal-panel { transform: translateY(0) scale(1); }
+
+.project-modal.open .project-modal-panel {
+  transform: scale(1);
+}
+
+.project-modal-media {
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  max-height: 90vh;
+}
+
+.project-modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: calc(90vh - 90px);
+  background: #0a0a0a;
+}
+
+.project-modal-thumbs {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  overflow-x: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-modal-thumbs img {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.project-modal-thumbs img.active,
+.project-modal-thumbs img:hover {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.project-modal-body {
+  padding: var(--sp-7);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 .project-modal-close {
-  position: absolute; top: var(--sp-4); right: var(--sp-4);
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: rgba(16,18,26,0.6);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
   border: 1px solid var(--border);
-  color: var(--ink);
-  display: flex; align-items: center; justify-content: center;
-  z-index: 5;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.project-modal-close svg { width: 16px; height: 16px; }
 
-.project-modal-media { background: var(--bg-panel); }
-.project-modal-media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-.project-modal-thumbs { display: flex; gap: 6px; padding: var(--sp-3); overflow-x: auto; }
-.project-modal-thumbs img {
-  width: 56px; height: 56px; object-fit: cover; border-radius: 6px;
-  cursor: pointer; opacity: 0.55; flex-shrink: 0;
-  border: 1px solid transparent;
-  transition: opacity .2s, border-color .2s;
+.project-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
-.project-modal-thumbs img:hover, .project-modal-thumbs img.active { opacity: 1; border-color: var(--accent); }
 
-.project-modal-body { padding: var(--sp-7); }
 .badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -791,6 +847,13 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   .hero-stats { gap: var(--sp-6); }
   .work-cards { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .project-modal-panel {
+    grid-template-columns: 1fr;
+    max-height: 95vh;
+  }
+  .project-modal-media img {
+    max-height: 50vh;
+  }
 }
 
 @media (max-width: 520px) {
@@ -799,4 +862,147 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   .about-facts { grid-template-columns: 1fr; }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-stats { flex-wrap: wrap; row-gap: var(--sp-4); }
+}
+
+/* =========================================================
+   MODAL DE PROJECTO — TAMANHO FIXO E GRANDE
+   ========================================================= */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.project-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1150px; /* Largura generosa */
+  height: 650px;     /* Altura fixa da janela do modal no desktop */
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr; /* Dá mais espaço para a foto (coluna esquerda) */
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-modal.open .project-modal-panel {
+  transform: scale(1);
+}
+
+/* Área da mídia com tamanho fixo e estrito */
+.project-modal-media {
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  height: 100%; /* Ocupa toda a altura do painel */
+}
+
+/* Imagem principal com tamanho fixo, grande e preenchimento controlado */
+.project-modal-media img {
+  width: 100%;
+  height: calc(650px - 80px); /* Subtrai o espaço das miniaturas em baixo */
+  object-fit: cover;           /* Garante que preenche o espaço de forma uniforme e grande, sem distorcer */
+  background: #0a0a0a;
+}
+
+/* Barra de miniaturas fixa na parte inferior da coluna da imagem */
+.project-modal-thumbs {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.85);
+  overflow-x: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  height: 80px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.project-modal-thumbs img {
+  width: 65px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.project-modal-thumbs img.active,
+.project-modal-thumbs img:hover {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.project-modal-body {
+  padding: var(--sp-7);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.project-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsivo para telemóveis e ecrãs menores */
+@media (max-width: 868px) {
+  .project-modal-panel {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: 90vh;
+  }
+  .project-modal-media {
+    height: 320px; /* Altura fixa menor para mobile */
+  }
+  .project-modal-media img {
+    height: 240px;
+  }
 }

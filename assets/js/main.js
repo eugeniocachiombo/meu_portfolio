@@ -524,7 +524,7 @@
   });
 
   /* =========================================================
-     FORMULÁRIO DE CONTACTO (validação visual)
+     FORMULÁRIO DE CONTACTO (EmailJS + SweetAlert2)
      ========================================================= */
   const form = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
@@ -553,7 +553,7 @@
 
     if (!allValid) {
       formStatus.textContent = 'Verifica os campos assinalados.';
-      formStatus.style.color = 'var(--danger)';
+      formStatus.style.color = 'var(--danger, #ef4444)';
       return;
     }
 
@@ -563,14 +563,50 @@
     label.textContent = 'A enviar...';
     btn.disabled = true;
 
-    setTimeout(() => {
-      formStatus.textContent = 'Mensagem pronta a enviar — liga o teu serviço de email para activar o envio real.';
-      formStatus.style.color = 'var(--accent-2)';
-      label.textContent = original;
-      btn.disabled = false;
-      form.reset();
-      fields.forEach(f => f.classList.remove('valid', 'invalid'));
-    }, 900);
+    // Parâmetros enviados para o EmailJS
+    const templateParams = {
+      from_name: document.getElementById('name').value,
+      from_email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value,
+      to_email: 'eugeniocachiombo@gmail.com'
+    };
+
+    emailjs.send('service_848mbok', 'template_4zcejkp', templateParams)
+      .then(() => {
+        formStatus.textContent = 'Mensagem enviada com sucesso! Entrarei em contacto em breve.';
+        formStatus.style.color = 'var(--accent-2, #10b981)';
+        
+        // Alerta de sucesso com SweetAlert2
+        Swal.fire({
+          title: 'Mensagem Enviada!',
+          text: 'Obrigado pelo contacto. Entrarei em contacto em breve.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#10b981'
+        });
+
+        label.textContent = original;
+        btn.disabled = false;
+        form.reset();
+        fields.forEach(f => f.classList.remove('valid', 'invalid'));
+      }, (error) => {
+        console.error('Erro ao enviar:', error);
+        formStatus.textContent = 'Erro ao enviar a mensagem. Tenta novamente mais tarde.';
+        formStatus.style.color = 'var(--danger, #ef4444)';
+
+        // Alerta de erro com SweetAlert2
+        Swal.fire({
+          title: 'Ops!',
+          text: 'Erro ao enviar a mensagem. Tenta novamente mais tarde.',
+          icon: 'error',
+          confirmButtonText: 'Fechar',
+          confirmButtonColor: '#ef4444'
+        });
+
+        label.textContent = original;
+        btn.disabled = false;
+      });
   });
 
   /* =========================================================
