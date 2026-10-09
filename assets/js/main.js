@@ -6,6 +6,18 @@
      ========================================================= */
   const PROJECTS = [
     {
+      id: 'processamentosalarial',
+      year: '2026',
+      title: 'Simulador de Processamento Salarial',
+      desc: 'Mini software para simular processamento de salário',
+      stack: ['Vue.js + Tailwind', 'Express/Prisma.js (API Backend)', 'PostgreSQL'],
+      cover: 'assets/img/portfolio/processamentosalario/1.png',
+      images: [
+        'assets/img/portfolio/processamentosalario/1.png',
+      ],
+      url: 'https://eugeniocachiombo.github.io/processamento_salarial/' 
+    },
+    {
       id: 'planok',
       year: '2026',
       title: 'PlanoK — Plano de Consumo',
