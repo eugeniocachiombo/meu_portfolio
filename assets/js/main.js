@@ -11,7 +11,7 @@
       title: 'I.F.E.P.A.A Bom Deus',
       desc: 'Software de Gestão da Igreja Bom Deus.',
       stack: ['Vue.js + Tailwind', 'Express/Prisma.js (API Backend)', 'PostgreSQL'],
-      cover: 'assets/img/portfolio/processamentosalario/1.png',
+      cover: 'assets/img/portfolio/appbomdeus/1.png',
       images: [
         'assets/img/portfolio/appbomdeus/1.png',
         'assets/img/portfolio/appbomdeus/2.png',
