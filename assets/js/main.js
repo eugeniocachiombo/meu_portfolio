@@ -6,6 +6,27 @@
      ========================================================= */
   const PROJECTS = [
     {
+      id: 'appbomdeus',
+      year: '2026',
+      title: 'I.F.E.P.A.A Bom Deus',
+      desc: 'Software de Gestão da Igreja Bom Deus.',
+      stack: ['Vue.js + Tailwind', 'Express/Prisma.js (API Backend)', 'PostgreSQL'],
+      cover: 'assets/img/portfolio/processamentosalario/1.png',
+      images: [
+        'assets/img/portfolio/appbomdeus/1.png',
+        'assets/img/portfolio/appbomdeus/2.png',
+        'assets/img/portfolio/appbomdeus/3.png',
+        'assets/img/portfolio/appbomdeus/4.png',
+        'assets/img/portfolio/appbomdeus/5.png',
+        'assets/img/portfolio/appbomdeus/6.png',
+        'assets/img/portfolio/appbomdeus/7.png',
+        'assets/img/portfolio/appbomdeus/8.png',
+        'assets/img/portfolio/appbomdeus/9.png',
+        'assets/img/portfolio/appbomdeus/10.png',
+      ],
+      url: 'https://ifepaa-sonef.vercel.app/' 
+    },
+    {
       id: 'processamentosalarial',
       year: '2026',
       title: 'Simulador de Processamento Salarial',
