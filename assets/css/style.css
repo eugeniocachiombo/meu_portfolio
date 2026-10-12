@@ -49,7 +49,7 @@ html[data-theme="light"] {
   --shadow: 0 30px 70px -30px rgba(20, 22, 31, 0.25);
 }
 
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -105,7 +105,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 main { position: relative; z-index: 1; }
 
-/* ---------- Layout helpers & Centralização unificada ---------- */
+/* ---------- Layout helpers ---------- */
 .section-head {
   max-width: 700px;
   margin: 0 auto var(--sp-8);
@@ -121,7 +121,6 @@ section {
   max-width: none;
 }
 
-/* Conteúdo interno de cada secção alinhado e centralizado */
 .about-grid,
 .skills-groups,
 .project-grid,
@@ -232,7 +231,6 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 .dock-social svg { width: 18px; height: 18px; }
 .dock-social a:hover { color: var(--accent-2); }
 
-/* mobile toggle + panel hidden on desktop */
 .nav-toggle { display: none; }
 .mobile-panel { display: none; }
 
@@ -546,7 +544,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 }
 
 /* =========================================================
-   MODAL DE PROJECTO — TAMANHO FIXO E GRANDE
+   MODAL DE PROJECTO
    ========================================================= */
 .project-modal {
   position: fixed;
@@ -597,7 +595,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 .project-modal-media {
   display: flex;
   flex-direction: column;
-  background: #000;
+  background: #08090d; /* Fundo escuro elegante para preencher eventuais barras laterais */
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -605,9 +603,11 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 .project-modal-media img {
   width: 100%;
-  height: calc(650px - 80px);
-  object-fit: cover;
-  background: #0a0a0a;
+  height: calc(100% - 80px); /* Garante que ocupa o espaço acima dos thumbnails */
+  object-fit: contain;      /* MUDANÇA CHAVE: exibe a imagem inteira sem cortar */
+  object-position: center;   /* Centraliza a imagem na área */
+  background: transparent;
+  padding: var(--sp-3);     /* Margem interna suave para respiração */
 }
 
 .project-modal-thumbs {
@@ -771,7 +771,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 .footer-bottom p { margin: 0; font-size: 0.82rem; font-family: var(--font-mono); }
 
 /* =========================================================
-   SCROLL REVEAL (single orchestrated pattern)
+   SCROLL REVEAL
    ========================================================= */
 .reveal {
   opacity: 0;
@@ -854,16 +854,23 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   .hero-stats { gap: var(--sp-6); }
   .work-cards { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  
+  .project-modal {
+    padding: 1rem;
+  }
   .project-modal-panel {
     grid-template-columns: 1fr;
     height: auto;
-    max-height: 90vh;
+    max-height: 85vh;
   }
   .project-modal-media {
-    height: 320px;
+    height: 260px;
   }
   .project-modal-media img {
-    height: 240px;
+    height: 180px;
+  }
+  .project-modal-body {
+    padding: var(--sp-5);
   }
 }
 
